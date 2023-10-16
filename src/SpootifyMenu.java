@@ -9,10 +9,19 @@ public class SpootifyMenu {
     public Map<String, SpootifyPlaylist> getPlaylists(){
 		return playlists;
 	}
+
+    private static SpootifyMenu instancia;
     
-    public SpootifyMenu(){
+    private SpootifyMenu(){
         playlists = new HashMap<String, SpootifyPlaylist>();
         addPlaylist("library");
+    }
+
+    public static SpootifyMenu getInstance(){
+        if(instancia == null){
+            instancia = new SpootifyMenu();
+        }
+        return instancia;
     }
 
     public void addPlaylist(String playlistTitle){

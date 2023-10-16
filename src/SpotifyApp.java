@@ -208,7 +208,7 @@ public class SpotifyApp {
     }
 
     public static void main(String[] args){
-        SpootifyMenu myMenu = new SpootifyMenu();
+        SpootifyMenu myMenu = SpootifyMenu.getInstance();
         Scanner dataScanner = new Scanner(System.in);
         int actualCommand = 0;
         String playlistTitle;
